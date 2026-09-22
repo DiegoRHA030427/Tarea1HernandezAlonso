@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "filesystem-solo-lectura": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "--mount", "type=bind,src=C:\\dev\\Tarea1HernandezAlonso\\sandbox,dst=/projects/sandbox,ro",
+        "mcp/filesystem",
+        "/projects"
+      ]
+    }
+  }
+}
