@@ -2,8 +2,8 @@
 
 | | |
 |---|---|
-| **Alumno** | Diego Raymundo Hernández Alonso |
-| **Número de boleta** | **(completar)** |
+| **Alumno** | Hernández Alonso Diego Raymundo |
+| **Número de boleta** | 2022361124 |
 | **Grupo** | 7CV4 |
 | **Materia** | Desarrollo de Aplicaciones Móviles Nativas |
 | **Escuela** | Escuela Superior de Cómputo (ESCOM) — IPN |
@@ -102,10 +102,10 @@ En mi caso: el **host** es Claude Desktop, el **cliente** es el conector MCP que
 
 | Componente | Versión |
 |---|---|
-| Sistema operativo | Windows 11 **(completar: Win + R → `winver`)** |
+| Sistema operativo | Windows 11 Home Single Language, versión 10.0.26200 (build 26200) |
 | Node.js | **v24.16.0** (LTS) |
 | npm / npx | **11.13.0** |
-| Claude Desktop | **(completar: Help → About)** — instalado desde la tienda de Microsoft (paquete MSIX) |
+| Claude Desktop | **2.2553.1.0**, instalado desde la tienda de Microsoft (paquete MSIX) |
 | `@modelcontextprotocol/server-filesystem` | **2026.8.31** (fijada en la configuración) |
 | Especificación MCP consultada | **2026-07-28** (el servidor responde con la revisión **2025-11-25**) |
 | Adaptador `scripts/mcp-schema-proxy.js` | Node.js, sin dependencias (ver [Problemas encontrados](#problemas-encontrados)) |
@@ -130,9 +130,17 @@ npx --version
 
 ### Paso 2. Instalar Claude Desktop
 
-Descargar desde <https://claude.ai/download>, instalar e iniciar sesión con una cuenta de Claude. Verificar la versión en el menú (☰) → *Help* → *About*.
+Descargar desde <https://claude.ai/download>, instalar e iniciar sesión con una cuenta de Claude. Para ver la versión instalada (versión de la tienda):
 
-📸 `img/02-claude-version.png`
+```powershell
+Get-AppxPackage *Claude* | Select-Object Name, Version
+```
+
+Y la versión de Windows:
+
+```powershell
+Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, BuildNumber
+```
 
 ### Paso 3. Obtener el repositorio y el directorio de trabajo
 
