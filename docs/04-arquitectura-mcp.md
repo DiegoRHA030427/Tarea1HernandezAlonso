@@ -66,7 +66,7 @@ Antes había otro transporte, HTTP+SSE con dos endpoints, pero está obsoleto de
 
 Con mi instalación sería así:
 
-1. Abro Claude Desktop, lee `claude_desktop_config.json` y ejecuta `npx -y @modelcontextprotocol/server-filesystem C:\dev\Tarea1HernandezAlonso\sandbox`.
+1. Abro Claude Desktop, lee `claude_desktop_config.json` y ejecuta el servidor como proceso hijo (en mi caso a través del adaptador `scripts/mcp-schema-proxy.js`, que explico en el README en "Problemas encontrados"): `node mcp-schema-proxy.js npx -y @modelcontextprotocol/server-filesystem@2026.8.31 C:\dev\Tarea1HernandezAlonso\sandbox`.
 2. El cliente y el servidor se ponen de acuerdo en la versión y las capacidades.
 3. El cliente pide `tools/list` y el host agrega las 14 herramientas a lo que le manda al modelo.
 4. Yo escribo: "Lista los archivos de mi sandbox".

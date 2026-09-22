@@ -62,9 +62,8 @@ En **cada** llamada, antes de tocar el disco, el servidor revisa la ruta:
 4. Si es un enlace simbólico, averigua a dónde apunta de verdad (`realpath`) y vuelve a revisar. Entonces un *symlink* adentro del sandbox que apunte afuera también se bloquea.
 5. Si el archivo es nuevo, revisa que la carpeta donde se va a crear sí esté permitida.
 
-Si algo de esto falla, **no hace la operación** y regresa un error. Este es el mensaje que me salió en la prueba:
+Si algo de esto falla, **no hace la operación** y regresa un error. Este es el mensaje que me salió en la prueba desde Claude Desktop (captura [11-limite-seguridad.png](../img/11-limite-seguridad.png)):
 
-<!-- TODO: reemplazar con el texto EXACTO que salga al correr scripts/prueba_jsonrpc.py -->
 ```
 Access denied - path outside allowed directories: C:\dev\Tarea1HernandezAlonso\README.md not in C:\dev\Tarea1HernandezAlonso\sandbox
 ```
