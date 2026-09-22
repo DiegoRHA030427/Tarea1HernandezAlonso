@@ -1,8 +1,10 @@
 {
   "mcpServers": {
     "filesystem": {
-      "command": "npx",
+      "command": "node",
       "args": [
+        "C:\\dev\\Tarea1HernandezAlonso\\scripts\\mcp-schema-proxy.js",
+        "npx",
         "-y",
         "@modelcontextprotocol/server-filesystem@2026.8.31",
         "C:\\dev\\Tarea1HernandezAlonso\\sandbox"
