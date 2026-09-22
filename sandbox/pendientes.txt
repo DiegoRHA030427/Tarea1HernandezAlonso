@@ -1,4 +1,5 @@
 PENDIENTES DE LA TAREA 1
 1. Investigar MCP vs API
 2. Instalar el servidor de sistema de archivos
-3. Tomar capturas de pantalla
+3. Tomar capturas de pantalla (hecho)
+4. Preparar la exposición
