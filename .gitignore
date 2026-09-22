@@ -1,0 +1,16 @@
+# Entornos y dependencias
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+
+# Nunca subir credenciales
+.env
+*.key
+*.pem
+secrets*.json
+
+# Sistema
+.DS_Store
+Thumbs.db
