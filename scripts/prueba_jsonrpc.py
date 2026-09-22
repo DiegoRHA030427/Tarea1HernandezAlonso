@@ -1,4 +1,4 @@
-"""
+r"""
 Prueba del servidor de sistema de archivos hablando JSON-RPC 2.0 "a mano" por stdio,
 sin ningún modelo de por medio. Sirve para:
   1. Ver los mensajes reales del protocolo (initialize, tools/list, tools/call).

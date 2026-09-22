@@ -260,7 +260,9 @@ cd C:\dev\Tarea1HernandezAlonso
 python scripts\prueba_jsonrpc.py
 ```
 
-Muestra el catálogo de 14 herramientas con sus anotaciones y demuestra que el servidor rechaza rutas fuera de `sandbox` aunque **ningún modelo** esté involucrado. 📸 `img/12-prueba-jsonrpc.png`
+Muestra el catálogo de 14 herramientas con sus anotaciones y demuestra que el servidor rechaza rutas fuera de `sandbox` aunque **ningún modelo** esté involucrado. Resultado en mi máquina (Python 3.12.6): 14 herramientas, `list_allowed_directories` y `list_directory` OK, y **Access denied** tanto con la ruta directa como con `sandbox\..\README.md`.
+
+![Prueba JSON-RPC](img/12-prueba-jsonrpc.png)
 
 ---
 
@@ -287,7 +289,7 @@ Tras las operaciones, los cambios se pueden verificar desde la terminal con `git
 **Petición:** *"Usa la herramienta read_text_file para leer C:\dev\Tarea1HernandezAlonso\README.md"*
 (El archivo existe, pero está **un nivel arriba** de `sandbox\`, es decir, fuera del directorio autorizado.)
 
-El truco de "escapar" con `..` (`C:\dev\Tarea1HernandezAlonso\sandbox\..\README.md`) también se prueba en [scripts/prueba_jsonrpc.py](scripts/prueba_jsonrpc.py).
+El truco de "escapar" con `..` (`C:\dev\Tarea1HernandezAlonso\sandbox\..\README.md`) también lo probé con [scripts/prueba_jsonrpc.py](scripts/prueba_jsonrpc.py): el servidor normaliza la ruta a `C:\dev\Tarea1HernandezAlonso\README.md` y la rechaza igual (ver [captura 12](img/12-prueba-jsonrpc.png)).
 
 **Resultado obtenido:** en el detalle de la herramienta se ve la petición (`"path": "C:\\dev\\Tarea1HernandezAlonso\\README.md"`) y el error que regresó el servidor:
 
