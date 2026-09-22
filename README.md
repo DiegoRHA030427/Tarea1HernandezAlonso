@@ -38,7 +38,7 @@ Tarea1HernandezAlonso/
 │   └── prueba_jsonrpc.py      Prueba del servidor con JSON-RPC "a mano"
 ├── img/                       Capturas de pantalla
 ├── servidor-propio/           Servidor MCP propio en Python (opcional)
-└── presentacion/              Diapositivas y guion de la demostración
+└── presentacion/              Diapositivas de la exposición (PDF y PowerPoint)
 ```
 
 ---
@@ -337,9 +337,7 @@ Instrucciones de instalación y configuración: [servidor-propio/README.md](serv
 
 ## Exposición
 
-- Diapositivas (Markdown/Marp): [presentacion/presentacion.md](presentacion/presentacion.md)
-- Guion de la demostración en vivo y del video de respaldo: [presentacion/guion-demo.md](presentacion/guion-demo.md)
-- Video de respaldo (máx. 2 min): `presentacion/video-respaldo.mp4` <!-- TODO: subir o enlazar -->
+- Diapositivas: [presentacion/presentacion-mcp.pdf](presentacion/presentacion-mcp.pdf) y [presentacion/presentacion-mcp.pptx](presentacion/presentacion-mcp.pptx)
 
 ---
 
