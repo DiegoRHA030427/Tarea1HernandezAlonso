@@ -7,7 +7,6 @@
 | **Grupo** | 7CV4 |
 | **Materia** | Desarrollo de Aplicaciones Móviles Nativas |
 | **Escuela** | Escuela Superior de Cómputo (ESCOM) — IPN |
-| **Especificación MCP consultada** | **2026-07-28** (revisión *Current*, consultada el 21/09/2026) |
 
 ---
 
@@ -125,8 +124,7 @@ winget install OpenJS.NodeJS.LTS
 node --version
 npx --version
 ```
-
-📸 `img/01-node-version.png`
+![Versiones de Node y npx](img/01-node-version.png)
 
 ### Paso 2. Instalar Claude Desktop
 
@@ -147,7 +145,7 @@ Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, BuildNum
 ```powershell
 mkdir C:\dev -Force
 cd C:\dev
-git clone https://github.com/<usuario>/Tarea1HernandezAlonso.git
+git clone https://github.com/DiegoRHA030427/Tarea1HernandezAlonso.git
 cd Tarea1HernandezAlonso
 dir sandbox
 ```
@@ -199,7 +197,9 @@ Debe aparecer `Secure MCP Filesystem Server running on stdio`. El proceso se que
 
 3. Guardar el archivo.
 
-📸 `img/03-config-v1.png` (primera versión, antes del adaptador)
+Así se veía mi primera configuración, antes del adaptador:
+
+![Configuración](img/03-config-v1.png)
 
 ### Paso 6. Reiniciar Claude Desktop por completo
 
@@ -213,9 +213,17 @@ Y volver a abrir Claude Desktop.
 
 ### Paso 7. Verificar que el cliente reconoce el servidor y lista sus herramientas
 
-1. **Configuración → Desarrollador**: el servidor `filesystem` debe aparecer **En ejecución**. 📸 `img/04-servidor-conectado.png`
-2. En un chat nuevo, abrir el menú de herramientas/conectores del cuadro de texto y desplegar `filesystem`: deben aparecer **14 herramientas**: 10 de lectura y 4 de escritura (*Write File, Edit File, Create Directory, Move File*), que Claude Desktop marca como **"Requiere aprobación"**. 📸 `img/05-herramientas.png`, `img/05-herramientas-2.png`
-3. En la pestaña de **Chat** (no en la de Code), escribir: *"Usa list_allowed_directories"*. La respuesta debe ser **solo** `C:\dev\Tarea1HernandezAlonso\sandbox`. 📸 `img/05c-allowed-directories.png`
+1. **Configuración → Desarrollador**: el servidor `filesystem` debe aparecer **En ejecución**.
+
+![Servidor en ejecución](img/04-servidor-conectado.png)
+
+2. En un chat nuevo, abrir el menú de herramientas/conectores del cuadro de texto y desplegar `filesystem`: deben aparecer **14 herramientas**: 10 de lectura y 4 de escritura (*Write File, Edit File, Create Directory, Move File*), que Claude Desktop marca como **"Requiere aprobación"**.
+
+![Herramientas](img/05-herramientas.png)
+   
+![Herramientas de escritura](img/05-herramientas-2.png)
+
+3. En la pestaña de **Chat** (no en la de Code), escribir: *"Usa list_allowed_directories"*. La respuesta debe ser **solo** `C:\dev\Tarea1HernandezAlonso\sandbox`. 
 
 ![list_allowed_directories](img/05c-allowed-directories.png)
 
@@ -342,8 +350,6 @@ Instrucciones de instalación y configuración: [servidor-propio/README.md](serv
 ---
 
 ## Conclusiones personales
-
-<!-- TODO: esto es un borrador, cambiarlo con mis propias palabras y con lo que me haya pasado al instalarlo -->
 
 Antes de esta tarea yo pensaba que cuando "conectas la IA a tus archivos", el modelo tenía acceso directo a tu disco. Ahora entiendo que no es así: el modelo solo propone qué herramienta usar, y el que hace el trabajo es un programa local (el servidor MCP), y solo dentro de la carpeta que yo le dejé. Con la prueba del límite me quedó muy claro, porque el modelo sí intentó leer el archivo pero el servidor no lo dejó.
 
